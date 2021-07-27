@@ -1,13 +1,334 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  display: grid;
+  border-radius: 5px;
+  padding-left: 20px;
+  background: linear-gradient(to left, rgb(55, 58, 55), rgb(98, 98, 202));
+}
+
+.pr {
+  width: 100%;
+  display: grid;
+}
+
+.products {
+  width: 100%;
+}
+
+.Product {
+  font-family: Montserrat;
+  color: white;
+  width: 90%;
+  min-height: 250px;
+  overflow-y: auto;
+  background: #333;
+  border-radius: 5px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow-x: hidden;
+  border: 1px solid black;
+}
+
+.pr-img {
+  width: 100%;
+  height: 240px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  background: white;
+}
+.pr-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+}
+
+.details {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 60px;
+}
+
+.info {
+  width: 90%;
+  display: flex;
+  min-height: 50px;
+  margin-top: 10px;
+  word-wrap: break-word;
+  margin-bottom: 40px;
+  font-size: 14px;
+}
+
+.cart {
+  width: 100%;
+  display: flex;
+  position: absolute;
+  bottom: 10px;
+  left: 85%;
+  overflow-x: hidden;
+}
+
+.sp {
+  color: rgb(243, 243, 243);
+  font-size: 1.4rem;
+}
+.name {
+  font-size: 20px;
+  color: rgba(245, 237, 237, 0.85);
+}
+.price {
+  color: rgb(238, 175, 40);
+}
+
+.header {
+  width: 98%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #333;
+  border-radius: 0px 0px 6px 6px;
+  margin-bottom: 40px;
+  padding: 0px 30px;
+  position: relative;
+}
+
+.cartt {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  position: relative;
+}
+.cartt:hover {
+  cursor: pointer;
+}
+
+.logo {
+}
+
+.logo a {
+  font-family: "Lobster", sans-serif;
+  font-size: 25px;
+  color: white;
+  text-decoration: none;
+}
+
+.hidden-cart {
+  width: 90vw;
+  min-height: 480px;
+  background: #444;
+  color: white;
+  display: flex;
+  position: absolute;
+  top: 70px;
+  right: 5%;
+  z-index: 10;
+  transition: transform 0.5s ease-in-out;
+  border-radius: 6px 0px 6px 6px;
+}
+
+.number {
+  height: 20px;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  color: white;
+  background: rgb(180, 38, 38);
+  border-radius: 50%;
+  top: -2px;
+  left: -2px;
+  font-family: Roboto;
+  font-size: 17px;
+}
+
+.cart:hover {
+  cursor: pointer;
+}
+
+.cart-section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.cart-content {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  color: black;
+  display: grid;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(85, 203, 207);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(122, 60, 236);
+}
+
+.buttons {
+  width: 90%;
+  background: transparent;
+  justify-self: center;
+  height: 80px;
+  display: flex;
+  grid-column: 1/5;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  border-radius: 6px;
+}
+.item {
+  height: 280px;
+  width: 90%;
+  margin: 8px 5px;
+  background: #111;
+  border-radius: 6px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  height: 40px;
+  display: flex;
+  flex: 1;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-family: Roboto;
+  margin-bottom: 20px;
+}
+.total {
+  color: white;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  font-family: Roboto;
+  font-size: 20px;
+  justify-content: center;
+  margin-bottom: 10px 0px;
+}
+.btns {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.btns button:hover {
+  cursor: pointer;
+}
+
+.btns button {
+  width: 140px;
+  height: 40px;
+  outline: none;
+  border: none;
+  color: white;
+  font-family: Roboto;
+  font-size: 18px;
+  background: #222;
+  margin-right: 20px;
+}
+.btns .empty {
+  background: rgb(199, 100, 100);
+}
+.btns .checkout {
+  background: rgb(76, 76, 173);
+}
+.h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: white;
+  font-family: Roboto;
+}
+
+.imgg {
+  width: 100%;
+  height: 70%;
+}
+.imgg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detailss {
+  width: 100%;
+  margin-top: 6px;
+  display: flex;
+  padding: 5px;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn {
+  width: 100%;
+  margin-top: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn button {
+  width: 50%;
+  height: 30px;
+  outline: none;
+  border: none;
+  background: rgb(7, 30, 73);
+  color: white;
+  font-size: 20px;
+  font-family: Roboto;
+}
+@media screen and (min-width: 800px) {
+  .pr {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .cart-content {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
