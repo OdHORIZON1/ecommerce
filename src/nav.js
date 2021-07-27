@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import {FaShoppingCart} from 'react-icons/fa'
 import Cart from './cart';
 
-const Nav = ({ totalItems, cartt })=>{
+const Nav = ({ totalItems, cartt, handleQuantityUpdate, handleRemoveItem, emptyCart })=>{
 
     const[bool, setBool] = useState(false);
     const handleClick  =(e)=>{
@@ -14,7 +14,11 @@ const Nav = ({ totalItems, cartt })=>{
             <div className="logo"><a href="#">OdeCOMMERCE</a></div>
             <div className="cartt" onClick={handleClick}><span className="number">{totalItems}</span><FaShoppingCart /></div>
             {bool && <div className="hidden-cart">
-            <Cart cart2={cartt}/>
+            <Cart 
+            handleQuantityUpdate={handleQuantityUpdate}
+            handleRemoveItem={handleRemoveItem}
+            emptyCart={emptyCart} 
+            cart2={cartt}/>
             </div>}
         </header>
     );

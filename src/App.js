@@ -25,6 +25,21 @@ function App() {
       setCart(item.cart);
   }
 
+  const handleQuantityUpdate = async(productId, quantity)=>{
+    const { cart } = await commerse.cart.update(productId, { quantity });
+    setCart(cart);
+  }
+
+  const handleRemoveItem = async(productId)=>{
+    const { cart }  = await commerse.cart.remove(productId);
+    setCart(cart);
+  }
+
+  const emptyCart = async()=>{
+    const { cart } = await commerse.cart.empty();
+    setCart(cart);
+  }
+
   useEffect(()=>{
       fetchProducts();
       fetchCart();
@@ -34,7 +49,11 @@ console.log(cart);
   return(
 
   <section className="container">
-    <Nav totalItems={cart.total_items} cartt={cart} />
+       <Nav totalItems={cart.total_items} 
+    cartt={cart}
+    handleQuantityUpdate={handleQuantityUpdate}
+    handleRemoveItem={handleRemoveItem}
+    emptyCart={emptyCart} />
     <Products products={products} onAddToCart={handleAddToCart}/>
   
   </section>

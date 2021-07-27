@@ -231,6 +231,32 @@ body {
   color: white;
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+.quan {
+  position: absolute;
+  left: 10px;
+  bottom: 18px;
+}
+
+.minus,
+.plus {
+  width: 20px;
+  height: 20px;
+}
+.minus button,
+.plus button {
+  width: 18px;
+  height: 20px;
+  font-size: 18px;
+  font-family: Roboto;
+  text-align: center;
+}
+.qq {
+  width: 20px;
+  height: 20px;
+  margin: 0px 5px;
+  color: white;
 }
 .title {
   height: 40px;
@@ -323,6 +349,9 @@ body {
   color: white;
   font-size: 20px;
   font-family: Roboto;
+}
+.removeItem:hover {
+  cursor: pointer;
 }
 @media screen and (min-width: 800px) {
   .pr {
